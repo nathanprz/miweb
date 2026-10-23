@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffe7f0">
+  <title>Una rosa para ti</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="tarjeta">
+    <header class="encabezado">
+      <p class="etiqueta">UN DETALLE PARA TI</p>
+      <h1>Una rosa para ti <span aria-hidden="true">♥</span></h1>
+      <p class="introduccion">Hay personas que merecen recordar lo especiales que son.</p>
+    </header>
+
+    <form id="formulario-nombre" class="formulario">
+      <label for="nombre">Escribe tu nombre para abrir tu detalle</label>
+      <div class="fila-entrada">
+        <input id="nombre" name="nombre" type="text" placeholder="Tu nombre..." autocomplete="given-name" required>
+        <button type="submit">Ver mi rosa</button>
+      </div>
+      <p class="nota">Una pequeña sorpresa hecha con cariño.</p>
+    </form>
+
+    <section id="detalle" class="detalle oculto" aria-live="polite">
+      <div class="rosa" role="img" aria-label="Una rosa roja">
+        <div class="brillo brillo-uno">✦</div>
+        <div class="brillo brillo-dos">♥</div>
+        <div class="flor">
+          <span class="petalo p1"></span>
+          <span class="petalo p2"></span>
+          <span class="petalo p3"></span>
+          <span class="petalo p4"></span>
+          <span class="petalo p5"></span>
+          <span class="petalo p6"></span>
+          <span class="centro"></span>
+        </div>
+        <div class="tallo"></div>
+        <div class="hoja hoja-izquierda"></div>
+        <div class="hoja hoja-derecha"></div>
+      </div>
+
+      <h2 id="saludo">Esta rosa es para ti</h2>
+      <p id="mensaje-principal" class="mensaje-principal"></p>
+
+      <div class="opciones">
+        <p>¿Qué te gustaría recordar hoy?</p>
+        <div class="botones-mensaje">
+          <button type="button" class="boton-secundario" data-tipo="triste">Me siento mal</button>
+          <button type="button" class="boton-secundario" data-tipo="sola">Me siento sola</button>
+          <button type="button" class="boton-secundario" data-tipo="importas">¿Le importo?</button>
+        </div>
+      </div>
+      <p id="mensaje-extra" class="mensaje-extra" aria-live="polite"></p>
+      <p class="firma">Con cariño, para recordarte que importas. ♥</p>
+    </section>
+
+    <p id="aviso" class="aviso" role="status" aria-live="polite"></p>
+    <footer>Hecho con cariño <span aria-hidden="true">♥</span></footer>
+  </main>
+</body>
+</html>

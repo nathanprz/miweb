@@ -1,0 +1,347 @@
+/* 1. Ajustes generales */
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --rosa-claro: #fff0f5;
+  --rosa: #e83e70;
+  --rosa-oscuro: #a91f4c;
+  --texto: #53313e;
+  --blanco: #ffffff;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--texto);
+  background:
+    radial-gradient(circle at top left, #fffafd, transparent 40%),
+    linear-gradient(135deg, #ffe6ef, #f9c9dc);
+}
+
+/* 2. Tarjeta principal */
+.tarjeta {
+  width: 100%;
+  max-width: 650px;
+  padding: 36px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 24px;
+  box-shadow: 0 18px 55px rgba(142, 39, 77, 0.16);
+}
+
+.etiqueta {
+  margin: 0 0 10px;
+  color: var(--rosa);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+h1 {
+  margin: 0;
+  color: var(--rosa-oscuro);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 7vw, 3rem);
+}
+
+h1 span {
+  color: var(--rosa);
+}
+
+.introduccion {
+  max-width: 420px;
+  margin: 14px auto 26px;
+  line-height: 1.6;
+}
+
+/* 3. Entrada del nombre */
+.formulario label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.fila-entrada {
+  display: flex;
+  gap: 10px;
+}
+
+input {
+  min-width: 0;
+  flex: 1;
+  padding: 13px 14px;
+  border: 1px solid #e4b4c5;
+  border-radius: 10px;
+  font: inherit;
+  background: white;
+}
+
+input:focus {
+  outline: 3px solid rgba(232, 62, 112, 0.2);
+  border-color: var(--rosa);
+}
+
+button {
+  border: 0;
+  border-radius: 10px;
+  padding: 13px 17px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+button:focus-visible {
+  outline: 3px solid #8e2147;
+  outline-offset: 3px;
+}
+
+.fila-entrada button {
+  color: white;
+  background: var(--rosa);
+}
+
+.fila-entrada button:hover {
+  background: var(--rosa-oscuro);
+}
+
+.nota {
+  margin: 10px 0 0;
+  color: #896876;
+  font-size: 0.85rem;
+}
+
+/* 4. Resultado y mensajes */
+.detalle {
+  margin-top: 25px;
+  animation: aparecer 0.7s ease both;
+}
+
+.oculto {
+  display: none;
+}
+
+h2 {
+  margin: 14px 0 8px;
+  color: var(--rosa-oscuro);
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.mensaje-principal {
+  max-width: 460px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.opciones {
+  margin-top: 25px;
+  padding: 20px;
+  border-radius: 16px;
+  background: var(--rosa-claro);
+}
+
+.opciones > p {
+  margin: 0 0 13px;
+  font-weight: 700;
+}
+
+.botones-mensaje {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.boton-secundario {
+  color: var(--rosa-oscuro);
+  background: white;
+  border: 1px solid #f0c0d0;
+}
+
+.boton-secundario:hover {
+  background: #ffe0eb;
+}
+
+.mensaje-extra {
+  min-height: 48px;
+  margin: 18px auto 0;
+  max-width: 470px;
+  line-height: 1.7;
+  font-weight: 600;
+}
+
+.firma {
+  margin: 18px 0 0;
+  color: var(--rosa-oscuro);
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+}
+
+/* 5. Rosa dibujada con CSS */
+.rosa {
+  position: relative;
+  width: 190px;
+  height: 190px;
+  margin: 8px auto 0;
+  animation: flotar 3s ease-in-out infinite;
+}
+
+.flor {
+  position: absolute;
+  z-index: 2;
+  top: 18px;
+  left: 50%;
+  width: 96px;
+  height: 96px;
+  transform: translateX(-50%);
+}
+
+.petalo {
+  position: absolute;
+  display: block;
+  width: 48px;
+  height: 58px;
+  border: 2px solid rgba(124, 7, 43, 0.25);
+  border-radius: 55% 55% 45% 45%;
+  background: linear-gradient(145deg, #ff6c91, #c70d45 75%);
+  box-shadow: inset -5px -5px 10px rgba(90, 0, 27, 0.2);
+}
+
+.p1 { top: 0; left: 24px; transform: rotate(0deg); }
+.p2 { top: 12px; left: 4px; transform: rotate(-42deg); }
+.p3 { top: 12px; right: 4px; transform: rotate(42deg); }
+.p4 { top: 29px; left: 0; transform: rotate(-68deg); }
+.p5 { top: 29px; right: 0; transform: rotate(68deg); }
+.p6 {
+  top: 22px;
+  left: 24px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #ff8aa8, #9f0737 75%);
+}
+
+.centro {
+  position: absolute;
+  z-index: 3;
+  top: 31px;
+  left: 39px;
+  width: 18px;
+  height: 24px;
+  border: 3px solid #8f082e;
+  border-radius: 50%;
+  transform: rotate(25deg);
+  background: #e82d60;
+}
+
+.tallo {
+  position: absolute;
+  top: 96px;
+  left: 91px;
+  width: 8px;
+  height: 82px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #286d3a, #69a34d);
+}
+
+.hoja {
+  position: absolute;
+  top: 119px;
+  width: 43px;
+  height: 23px;
+  background: linear-gradient(135deg, #7fbd63, #347c43);
+  border: 1px solid #286d3a;
+}
+
+.hoja-izquierda {
+  left: 51px;
+  border-radius: 100% 0 100% 0;
+  transform: rotate(15deg);
+}
+
+.hoja-derecha {
+  right: 48px;
+  border-radius: 0 100% 0 100%;
+  transform: rotate(-15deg);
+}
+
+.brillo {
+  position: absolute;
+  color: var(--rosa);
+  font-size: 1.5rem;
+}
+
+.brillo-uno { top: 12px; right: 18px; }
+.brillo-dos { top: 62px; left: 12px; }
+
+.aviso {
+  margin: 18px 0 0;
+  color: var(--rosa-oscuro);
+  font-weight: 700;
+}
+
+footer {
+  margin-top: 28px;
+  color: #9a6c7e;
+  font-size: 0.85rem;
+}
+
+footer span {
+  color: var(--rosa);
+}
+
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes flotar {
+  0%, 100% { transform: translateY(0) rotate(-1deg); }
+  50% { transform: translateY(-7px) rotate(1deg); }
+}
+
+/* 6. Adaptación a celulares */
+@media (max-width: 520px) {
+  body {
+    padding: 12px;
+    align-items: flex-start;
+  }
+
+  .tarjeta {
+    margin: 10px 0;
+    padding: 25px 18px;
+    border-radius: 18px;
+  }
+
+  .fila-entrada {
+    flex-direction: column;
+  }
+
+  .fila-entrada button {
+    width: 100%;
+  }
+
+  .opciones {
+    padding: 16px 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
